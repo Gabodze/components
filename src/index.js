@@ -1,17 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function App(){
+  return(
+    <h3>ფუნქციური კომპონენტი</h3>
+  )
+}
+ 
+class App2 extends React.Component {
+  FunctionalComponent() {
+    return <h1>Hello world</h1>;
+  }
+  
+  render() {
+    return (
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <div>
+        <hr></hr>
+        <h3>class component</h3>
+        {this.FunctionalComponent()}
+      </div>
+    );
+  }
+}
+
+function Main(){
+  return(
+    <div>
+      <App/>
+      <App2/>
+    </div>
+  )
+}
+
+var root = document.getElementById("root");
+ReactDOM.createRoot(root).render(<Main/>);
+
